@@ -9,3 +9,14 @@ li {
     list-style-position:inside;
     margin: 2px;
 }
+
+.blue {
+    background-color: blue;
+}
+
+img {
+    width: 1200px;
+    height: 1000px;
+    padding: 10px;
+    margin: 10px;
+}

@@ -6,13 +6,15 @@
   <li *ngFor="let item of myItem">
     <h2>{{item.name | uppercase}}</h2>
     <p>{{item.description}}</p>
+    <img src="{{item.image}}"/>
     <p>{{item.price | currency : 'EUR': true}}</p>
 </ul>
 <h1>There are {{totalItems()}} items in stock</h1>
 <ul>
-    <li *ngFor="let item of myItem">
+    <li *ngFor="let item of myItem" [class]="(item.isSelected) ? 'blue' : ''">
       <h2>{{item.name}}</h2>
       <p>{{item.description}}</p>
+      <img [src]="item.image"/>
       <p *ngIf="item.stock > 0">{{item.stock}} in Stock</p>
       <p *ngIf="item.stock === 0">Out of Stock</p>
   </ul>
