@@ -1,0 +1,30 @@
+<h1>Angular CLI</h1>
+<h2>Here are some links to help you start: </h2>
+<h3>My app de {{h3}}</h3>
+<h4>{{myItem.name}}</h4>
+<ul>
+  <li *ngFor="let item of myItem">
+    <h2>{{item.name | uppercase}}</h2>
+    <p>{{item.description}}</p>
+    <p>{{item.price | currency : 'EUR': true}}</p>
+</ul>
+<h1>There are {{totalItems()}} items in stock</h1>
+<ul>
+    <li *ngFor="let item of myItem">
+      <h2>{{item.name}}</h2>
+      <p>{{item.description}}</p>
+      <p *ngIf="item.stock > 0">{{item.stock}} in Stock</p>
+      <p *ngIf="item.stock === 0">Out of Stock</p>
+  </ul>
+
+<ul>
+  <li>
+    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" href="https://blog.angular.io//">Angular blog</a></h2>
+  </li>
+</ul>
