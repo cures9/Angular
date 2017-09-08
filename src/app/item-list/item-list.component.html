@@ -2,6 +2,9 @@
 <h2>Here are some links to help you start: </h2>
 <h3>My app de {{h3}}</h3>
 <h4>{{myItem.name}}</h4>
+
+<input type="text" [(ngModel)]="item" required  placeholder="Inserte el nombre"/>
+
 <ul>
   <li *ngFor="let item of myItem">
     <h2>{{item.name | uppercase}}</h2>
@@ -18,7 +21,7 @@
       <p *ngIf="item.stock > 0">{{item.stock}} in Stock</p>
       <p *ngIf="item.stock === 0">Out of Stock</p>
       <button class="btn-amount" [disabled]='item.quantity===0' (click)="removeQuantity(item)">-</button>
-      <input type="number" maxlength="2" placeholder="0" class="amount" [value]="item.quantity" [(ngModel)]="item.quantity"/>
+      <input type="number" maxlength="2" disabled placeholder="0" class="amount" [value]="item.quantity" [(ngModel)]="item.quantity"/>
       <button class="btn-amount" [disabled]='item.stock===0' (click)="addQuantity(item)">+</button>
       <input type="text" (keydown)="showKey($event)">
       <h2 (mouseover)="getCoord($event)">Hover me</h2>
