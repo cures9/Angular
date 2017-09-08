@@ -14,10 +14,30 @@ myItem: Item[];
 
   }
 
+addQuantity(item: Item) {
+  if ( item.stock > 0) {
+    item.quantity++;
+    item.stock--;
+  }
+}
 
+removeQuantity(item: Item) {
+  if ( item.quantity > 0) {
+    item.quantity--;
+    item.stock++;
+  }
+}
 
   ngOnInit() {
     this.myItem = ITEMS;
+}
+
+showKey(event) {
+  alert(event.keyCode);
+}
+
+getCoord(event) {
+  console.log(event.clientX + ',' + event.clientY);
 }
 
 totalItems() {

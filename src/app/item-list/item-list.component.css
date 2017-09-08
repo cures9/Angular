@@ -15,8 +15,17 @@ li {
 }
 
 img {
-    width: 1200px;
-    height: 1000px;
+    width: 200px;
+    height: 200px;
     padding: 10px;
-    margin: 10px;
+
+}
+
+button:disabled {
+    visibility: hidden;
+}
+/*elimina las flechas del campo de los items, las que salen a la derecha*/
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    -webkit-appearance: none; 
 }

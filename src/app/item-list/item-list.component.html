@@ -17,6 +17,12 @@
       <img [src]="item.image"/>
       <p *ngIf="item.stock > 0">{{item.stock}} in Stock</p>
       <p *ngIf="item.stock === 0">Out of Stock</p>
+      <button class="btn-amount" [disabled]='item.quantity===0' (click)="removeQuantity(item)">-</button>
+      <input type="number" maxlength="2" placeholder="0" class="amount" [value]="item.quantity" [(ngModel)]="item.quantity"/>
+      <button class="btn-amount" [disabled]='item.stock===0' (click)="addQuantity(item)">+</button>
+      <input type="text" (keydown)="showKey($event)">
+      <h2 (mouseover)="getCoord($event)">Hover me</h2>
+      <input
   </ul>
 
 <ul>

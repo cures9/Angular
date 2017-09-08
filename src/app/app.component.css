@@ -6,7 +6,7 @@ div{
 }
 li {
     border: 2px solid black;
-    list-style-position:inside;
+    list-style-position:none;
     margin: 2px;
 }
 

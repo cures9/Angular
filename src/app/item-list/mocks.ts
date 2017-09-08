@@ -8,7 +8,8 @@ export const ITEMS: Item[] = [{
     'price': 50,
     // tslint:disable-next-line:max-line-length
     'image': 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_4.jpg',
-    'isSelected': true
+    'isSelected': true,
+    'quantity': 0
   },
   {
     'id': 2,
@@ -18,7 +19,8 @@ export const ITEMS: Item[] = [{
     'price': 25,
     // tslint:disable-next-line:max-line-length
     'image': 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_4.jpg',
-    'isSelected': true
+    'isSelected': true,
+    'quantity': 0
   },
   {
     'id': 3,
@@ -28,5 +30,6 @@ export const ITEMS: Item[] = [{
     'stock': 7,
     // tslint:disable-next-line:max-line-length
     'image': 'http://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_4.jpg',
-    'isSelected': false
+    'isSelected': false,
+    'quantity': 0
   }];
