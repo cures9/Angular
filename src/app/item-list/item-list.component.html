@@ -1,12 +1,12 @@
 <h1>Angular CLI</h1>
 <h2>Here are some links to help you start: </h2>
-<h3>My app de {{h3}}</h3>
+<h3>My app{{h3}}</h3>
 <h4>{{myItem.name}}</h4>
 
-<input type="text" [(ngModel)]="item" required  placeholder="Inserte el nombre"/>
+<input type="text" [(ngModel)]="item"/>
 
 <ul>
-  <li *ngFor="let item of myItem">
+  <li *ngFor="let item of myItem | search:'name':item">
     <h2>{{item.name | uppercase}}</h2>
     <p>{{item.description}}</p>
     <img src="{{item.image}}"/>
@@ -14,7 +14,7 @@
 </ul>
 <h1>There are {{totalItems()}} items in stock</h1>
 <ul>
-    <li *ngFor="let item of myItem" [class]="(item.isSelected) ? 'blue' : ''">
+    <li *ngFor="let item of myItem | search:'name':item" [class]="(item.isSelected) ? 'blue' : ''">
       <h2>{{item.name}}</h2>
       <p>{{item.description}}</p>
       <img [src]="item.image"/>
@@ -25,7 +25,6 @@
       <button class="btn-amount" [disabled]='item.stock===0' (click)="addQuantity(item)">+</button>
       <input type="text" (keydown)="showKey($event)">
       <h2 (mouseover)="getCoord($event)">Hover me</h2>
-      <input
   </ul>
 
 <ul>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from './item.model';
 import { ITEMS } from './mocks';
+import { ItemListService } from './item-list.service';
 
 @Component({
   selector: 'app-item-list',
@@ -10,7 +11,7 @@ import { ITEMS } from './mocks';
 export class ItemListComponent implements OnInit {
 myItem: Item[];
 
-  constructor() {
+  constructor(private itemListService: ItemListService) {
 
   }
 
@@ -29,7 +30,7 @@ removeQuantity(item: Item) {
 }
 
   ngOnInit() {
-    this.myItem = ITEMS;
+    this.myItem = this.itemListService.getItemList();
 }
 
 showKey(event) {

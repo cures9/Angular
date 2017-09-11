@@ -2,7 +2,7 @@ import { Item } from './item.model';
 
 export const ITEMS: Item[] = [{
     'id': 1,
-    'name': 'Item name',
+    'name': 'Item1',
     'description': 'These item is the best one',
     'stock': 8,
     'price': 50,
@@ -13,7 +13,7 @@ export const ITEMS: Item[] = [{
   },
   {
     'id': 2,
-    'name': 'Second item',
+    'name': 'Item2',
     'description': 'These item is smallest',
     'stock': 7,
     'price': 25,
@@ -24,7 +24,7 @@ export const ITEMS: Item[] = [{
   },
   {
     'id': 3,
-    'name': 'Third Item',
+    'name': 'Item3',
     'description': 'These item is awesome',
     'price': 19,
     'stock': 7,
