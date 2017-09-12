@@ -30,14 +30,20 @@ removeQuantity(item: Item) {
 }
 
   ngOnInit() {
-    if (this.myItem) {
     this.itemListService.getItemList()
                         .subscribe(myItems => this.myItem = myItems);
-    }
 }
 
 showKey(event) {
   alert(event.keyCode);
+}
+
+ItemEdit() {
+
+}
+
+UpdateItem(item) {
+  this.itemListService.updateItem(item).subscribe();
 }
 
 getCoord(event) {
@@ -45,10 +51,12 @@ getCoord(event) {
 }
 
 totalItems() {
-      let total = 0;
+  let total = 0;
+  if (this.myItem) {
        this.myItem.forEach(item => {
          total += item.stock;
        });
+      }
        return total;
        /*total items(){
          let sum = 0;

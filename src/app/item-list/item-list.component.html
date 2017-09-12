@@ -1,12 +1,10 @@
 <h1>Angular CLI</h1>
-<h2>Here are some links to help you start: </h2>
-<h3>My app{{h3}}</h3>
-<h4>{{myItem.name}}</h4>
+<h3>My app</h3>
 
-<input type="text" [(ngModel)]="item"/>
+<input type="text" [(ngModel)]="asd"/>
 
 <ul>
-  <li *ngFor="let item of myItem | search:'name':item">
+  <li *ngFor="let item of myItem | search:'name':asd">
     <h2>{{item.name | uppercase}}</h2>
     <p>{{item.description}}</p>
     <img src="{{item.image}}"/>
@@ -16,6 +14,7 @@
 <ul>
     <li *ngFor="let item of myItem | search:'name':item" [class]="(item.isSelected) ? 'blue' : ''">
       <h2>{{item.name}}</h2>
+      <input type="text" [(ngModel)]="item.name" (blur)="UpdateItem(item)" *ngIf="edited">
       <p>{{item.description}}</p>
       <img [src]="item.image"/>
       <p *ngIf="item.stock > 0">{{item.stock}} in Stock</p>
@@ -25,16 +24,4 @@
       <button class="btn-amount" [disabled]='item.stock===0' (click)="addQuantity(item)">+</button>
       <input type="text" (keydown)="showKey($event)">
       <h2 (mouseover)="getCoord($event)">Hover me</h2>
-   </ul>
-
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://blog.angular.io//">Angular blog</a></h2>
-  </li>
 </ul>
