@@ -7,12 +7,18 @@ import { AppComponent } from './app.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { SearchPipe } from './search.pipe';
 import { ItemListService } from './item-list/item-list.service';
+import { ItemComponent } from './item/item.component';
+import { OrderComponentComponent } from './order-component/order-component.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemListComponent,
-    SearchPipe
+    SearchPipe,
+    ItemComponent,
+    OrderComponentComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpModule],
