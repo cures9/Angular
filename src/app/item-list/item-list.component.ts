@@ -30,7 +30,10 @@ removeQuantity(item: Item) {
 }
 
   ngOnInit() {
-    this.myItem = this.itemListService.getItemList();
+    if (this.myItem) {
+    this.itemListService.getItemList()
+                        .subscribe(myItems => this.myItem = myItems);
+    }
 }
 
 showKey(event) {
@@ -58,4 +61,5 @@ totalItems() {
        }
        */
    }
+
 }
