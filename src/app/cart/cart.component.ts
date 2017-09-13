@@ -7,7 +7,7 @@ import { Item } from '../item-list/item.model';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-myItem: Item[];
+
 
   constructor() { }
 

@@ -4,6 +4,11 @@ h1 {
 div{
     background-color: rgba(128, 128, 128, 0.45);
 }
+
+ul{
+    list-style-type: none;
+}
+
 li {
     border: 2px solid black;
     list-style-position:inside;

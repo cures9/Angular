@@ -9,22 +9,17 @@
 <p>There are {{totalItems()}} items in stock</p>
 <p>Cart items {{getCartItems()}}</p>
 </div>
-<ul>
-  <li *ngFor="let item of myItem | search:'name':asd">
-    <h2>{{item.name | uppercase}}</h2>
-    <p>{{item.description}}</p>
-    <img src="{{item.image}}"/>
-    <p>{{item.price | currency : 'EUR': true}}</p>
-</ul>
+
 <hr>
 <hr>
 <ul>
-    <li *ngFor="let item of myItem | search:'name':item" [class]="(item.isSelected) ? 'blue' : ''">
+    <li *ngFor="let item of myItem | search:'name':asd" [class]="(item.isSelected) ? 'blue' : ''">
       <h2>{{item.name}}</h2>
       <!--Mirar ngif-->
       <input type="text" *ngIf="item.isSelected" [(ngModel)]="item.name" (blur)="UpdateItem(item)">
       <p *ngIf="!item.isSelected"></p>
       <p>{{item.description}}</p>
+      <p>{{item.price | currency : 'EUR': true}}</p>
       <img [src]="item.image"/>
       <p *ngIf="item.stock > 0">{{item.stock}} in Stock</p>
       <p *ngIf="item.stock === 0">Out of Stock</p>
@@ -33,4 +28,5 @@
       <button class="btn-amount" [disabled]='item.stock===0' (click)="addQuantity(item)">+</button>
       <input type="text" (keydown)="showKey($event)">
       <h2 (mouseover)="getCoord($event)">Hover me</h2>
+      <button type="button">Add to Cart</button>
 </ul>

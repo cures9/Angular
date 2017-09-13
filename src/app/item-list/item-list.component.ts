@@ -38,6 +38,10 @@ showKey(event) {
   alert(event.keyCode);
 }
 
+getCartItems() {
+
+}
+
 ItemEdit() {
 
 }
