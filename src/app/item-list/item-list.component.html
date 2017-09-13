@@ -3,6 +3,12 @@
 
 <input type="text" [(ngModel)]="asd"/>
 
+<div class="total-stock">
+<p>Search item by name</p>
+<input type="text" [(ngModel)]="asd"/>
+<p>There are {{totalItems()}} items in stock</p>
+<p>Cart items {{getCartItems()}}</p>
+</div>
 <ul>
   <li *ngFor="let item of myItem | search:'name':asd">
     <h2>{{item.name | uppercase}}</h2>
@@ -10,11 +16,14 @@
     <img src="{{item.image}}"/>
     <p>{{item.price | currency : 'EUR': true}}</p>
 </ul>
-<h1>There are {{totalItems()}} items in stock</h1>
+<hr>
+<hr>
 <ul>
     <li *ngFor="let item of myItem | search:'name':item" [class]="(item.isSelected) ? 'blue' : ''">
       <h2>{{item.name}}</h2>
-      <input type="text" [(ngModel)]="item.name" (blur)="UpdateItem(item)">
+      <!--Mirar ngif-->
+      <input type="text" *ngIf="item.isSelected" [(ngModel)]="item.name" (blur)="UpdateItem(item)">
+      <p *ngIf="!item.isSelected"></p>
       <p>{{item.description}}</p>
       <img [src]="item.image"/>
       <p *ngIf="item.stock > 0">{{item.stock}} in Stock</p>

@@ -10,6 +10,16 @@ import { ItemListService } from './item-list/item-list.service';
 import { ItemComponent } from './item/item.component';
 import { OrderComponentComponent } from './order-component/order-component.component';
 import { CartComponent } from './cart/cart.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: 'item-list', component : ItemListComponent},
+  { path: 'order-component',      component: OrderComponentComponent },
+  { path: '',
+    redirectTo: '/item-list',
+    pathMatch: 'full'
+  }
+];
 
 @NgModule({
   declarations: [
@@ -21,7 +31,7 @@ import { CartComponent } from './cart/cart.component';
     CartComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpModule],
+    BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes)],
   providers: [ItemListService],
   bootstrap: [AppComponent]
 })

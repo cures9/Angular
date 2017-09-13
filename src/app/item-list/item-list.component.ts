@@ -43,7 +43,8 @@ ItemEdit() {
 }
 
 UpdateItem(item) {
-  this.itemListService.updateItem(item).subscribe();
+  this.itemListService.updateItem(item)
+                      .subscribe();
 }
 
 getCoord(event) {
